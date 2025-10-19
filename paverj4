@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>زوم عکس با کلیک</title>
+<style>
+  body {
+    font-family: sans-serif;
+    background: #f9f9f9;
+    text-align: center;
+    padding: 50px;
+  }
+
+  h2 {
+    margin-bottom: 25px;
+  }
+
+  /* عکس اولیه */
+  .zoomable {
+    width: 300px;
+    max-width: 90%;
+    border-radius: 10px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: zoom-in;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+
+  /* حالت زوم‌شده */
+  .zoomed {
+    transform: scale(1.8);
+    cursor: zoom-out;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  }
+</style>
+</head>
+<body>
+
+<h2>برای زوم، روی عکس کلیک کن</h2>
+
+<!-- 🖼 فقط اسم فایل را تغییر بده -->
+<img src="ayneh.png" alt="عکس شما" id="zoomImg" class="zoomable">
+
+<script>
+  const img = document.getElementById('zoomImg');
+
+  // وقتی روی عکس کلیک شد، بین حالت زوم و عادی جابه‌جا شو
+  img.addEventListener('click', () => {
+    img.classList.toggle('zoomed');
+  });
+</script>
+
+</body>
+</html>
